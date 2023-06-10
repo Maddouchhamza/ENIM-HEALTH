@@ -1,4 +1,4 @@
-import ButtonAuth from "./ButtonAuth";
+import ButtonAuth from "../ButtonAuth";
 
 function Apropos() {
   return (

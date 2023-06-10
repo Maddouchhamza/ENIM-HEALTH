@@ -1,7 +1,7 @@
 import Menu from "../components/landingComponents/Menu";
 import Apropos from "../components/landingComponents/Apropos";
 import Fonctionnalites from "../components/landingComponents/Fonctionnalites";
-import Footer from "../components/Footer";
+import Footer from "../components/basicComponent/Footer";
 
 function App() {
   return (

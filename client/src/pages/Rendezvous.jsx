@@ -1,6 +1,5 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Dashboard from "../pages/Dashboard";
+import Navbar from "../components/basicComponent/Navbar";
+import Footer from "../components/basicComponent/Footer";
 
 function Rendezvous() {
   return (

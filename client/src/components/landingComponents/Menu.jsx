@@ -1,5 +1,5 @@
 import { HashLink } from "react-router-hash-link";
-import ButtonAuth from "./ButtonAuth";
+import ButtonAuth from "../ButtonAuth";
 
 function Menu() {
   return (

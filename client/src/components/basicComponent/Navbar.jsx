@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import LogoutButton from "../components/LogoutButton";
+import LogoutButton from "../LogoutButton";
 
 function Navbar() {
   return (
@@ -13,31 +13,31 @@ function Navbar() {
         </div>
         <nav className="flex font-main font-normal text-light-grey">
           <Link
-            to="/rendezvous"
+            to="/dashboard/rendezvous"
             className="w-40 flex justify-center  delay-1 transition-all delay-1 hover:font-bold hover:text-logo-text"
           >
             Rendez-vous
           </Link>
           <Link
-            to="/accueil/medicaments"
+            to="/dashboard/medicaments"
             className="w-40 flex justify-center transition-all delay-1 hover:font-bold hover:text-logo-text"
           >
             Médicaments
           </Link>
           <Link
-            to="/accueil/conseils"
+            to="/dashboard/conseils"
             className="w-40 flex justify-center transition-all delay-1 hover:font-bold hover:text-logo-text"
           >
             Conseils
           </Link>{" "}
           <Link
-            to="/accueil/forum"
+            to="/dashboard/forum"
             className="w-40 flex justify-center transition-all delay-1 hover:font-bold hover:text-logo-text"
           >
             Forum
           </Link>
           <Link
-            to="/accueil/reclamations"
+            to="/dashboard/reclamations"
             className="w-40 flex justify-center transition-all delay-1 hover:font-bold hover:text-logo-text"
           >
             Réclamations

@@ -1,29 +1,37 @@
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import Profile from "./components/Profile";
+import { useState, useEffect } from "react";
 
-import { Auth0Provider } from "@auth0/auth0-react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Accueil from "./pages/Accueil";
+import Dashboard from "./pages/Dashboard";
 import Rendezvous from "./pages/Rendezvous";
+import Forum from "./pages/Forum";
+
+import Auth from "./pages/Auth";
+
+import { AuthContexts } from "./helpers/AuthContexts";
 
 function App() {
+  const [authState, setAuthState] = useState(false);
+  useEffect(() => {
+    if (localStorage.getItem("accessToken")) {
+      setAuthState(true);
+    }
+  }, []);
   return (
-    <BrowserRouter>
-      <Auth0Provider
-        domain="dev-z6dv2cruhdh38gg6.us.auth0.com"
-        clientId="1hi4h0cL8clszmKxqMJrUMzyMDxobcOU"
-        authorizationParams={{
-          redirect_uri: window.location.origin,
-        }}
-      >
+    <AuthContexts.Provider value={{ authState, setAuthState }}>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/accueil" element={<Accueil />} />
-          <Route path="/rendezvous" element={<Rendezvous />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/rendezvous" element={<Rendezvous />} />
+          <Route path="/dashboard/forum" element={<Forum />} />
+
+          <Route path="/auth" element={<Auth />} />
         </Routes>
-      </Auth0Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </AuthContexts.Provider>
   );
 }
 

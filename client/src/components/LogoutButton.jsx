@@ -1,13 +1,18 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useContext } from "react";
+import { AuthContexts } from "../helpers/AuthContexts";
+import { useNavigate } from "react-router-dom";
 
 const LogoutButton = () => {
-  const { logout } = useAuth0();
+  const { setAuthState } = useContext(AuthContexts);
+  const navigateTo = useNavigate();
 
   return (
     <button
-      onClick={() =>
-        logout({ logoutParams: { returnTo: window.location.origin } })
-      }
+      onClick={() => {
+        localStorage.removeItem("accessToken");
+        setAuthState(false);
+        navigateTo("/");
+      }}
     >
       Log Out
     </button>
