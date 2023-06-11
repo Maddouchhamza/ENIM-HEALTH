@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Rendezvous from "./pages/Rendezvous";
 import Forum from "./pages/Forum";
+import ConseilsEtudiant from "./pages/ConseilsEtudiant";
+import MedicamentsEtudiant from "./pages/MedicamentsEtudiant";
 
 import Auth from "./pages/Auth";
 
@@ -26,7 +28,16 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/rendezvous" element={<Rendezvous />} />
+          <Route
+            path="/dashboard/conseiletudiant"
+            element={<ConseilsEtudiant />}
+          />
           <Route path="/dashboard/forum" element={<Forum />} />
+          <Route path="/dashboard/forum" element={<Forum />} />
+          <Route
+            path="/dashboard/medicamentsetudiant"
+            element={<MedicamentsEtudiant />}
+          />
 
           <Route path="/auth" element={<Auth />} />
         </Routes>

@@ -6,7 +6,7 @@ function Navbar() {
     <>
       <div className="w-screen flex  bg-white z-10 items-center justify-between px-40 py-6 drop-shadow-sm">
         <div className="flex items-center">
-          <img className="mr-2 w-" src="./assets/Logo.png" alt="Logo" />
+          <img className="mr-2 w-" src="../assets/Logo.png" alt="Logo" />
           <h1 className="font-main font-bold text-2xl text-logo-text">
             EnimHealth
           </h1>
@@ -19,13 +19,13 @@ function Navbar() {
             Rendez-vous
           </Link>
           <Link
-            to="/dashboard/medicaments"
+            to="/dashboard/medicamentsetudiant"
             className="w-40 flex justify-center transition-all delay-1 hover:font-bold hover:text-logo-text"
           >
             Médicaments
           </Link>
           <Link
-            to="/dashboard/conseils"
+            to="/dashboard/conseiletudiant"
             className="w-40 flex justify-center transition-all delay-1 hover:font-bold hover:text-logo-text"
           >
             Conseils

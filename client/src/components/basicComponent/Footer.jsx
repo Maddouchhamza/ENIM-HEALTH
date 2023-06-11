@@ -32,7 +32,10 @@ function Footer() {
         <div className=" text-[20px] font-semibold">
           <h1 className="text-[20px] font-semibold">Réseaux sociaux</h1>
           <div className="mt-8">
-            <a href="#" className="mb-3 flex items-center">
+            <a
+              href="https://www.facebook.com/"
+              className="mb-3 flex items-center"
+            >
               <img className="pr-5" src="/assets/icone_facebook.png" alt="" />
               <h1 className="text-[18px] font-light">EnimHealth</h1>
             </a>
