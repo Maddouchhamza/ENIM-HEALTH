@@ -52,9 +52,18 @@ model user {
 }
 
 model medicament {
-  idMedicament Int    @id @default(autoincrement())
+  idMedicament Int        @id @default(autoincrement())
   nom          String
   description  String
+  commandes    commande[]
+}
+
+model commande {
+  numCommande  Int        @id @default(autoincrement())
+  medicamentId Int
+  medicament   medicament @relation(fields: [medicamentId], references: [idMedicament])
+
+  @@index([medicamentId])
 }
 
 enum Role {

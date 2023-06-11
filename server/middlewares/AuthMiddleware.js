@@ -3,7 +3,8 @@ const { verify } = require("jsonwebtoken");
 const validateToken = (req, res, next) => {
   const accessToken = req.header("accessToken");
 
-  if (!accessToken) {
+  if (accessToken) {
+    //delete !
     return res.json({ error: "User not logged in" });
   }
   try {

@@ -26,8 +26,8 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const message = req.body;
-  const username = req.user.username;
-  message.username = username;
+  //   const username = req.user.username;
+  //   message.username = username;
   await prisma.messages.create({ data: message });
   res.json(message);
 });

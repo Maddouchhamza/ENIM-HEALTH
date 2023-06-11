@@ -8,7 +8,8 @@ const { validateToken } = require("../middlewares/AuthMiddleware");
 
 const prisma = new PrismaClient();
 
-router.get("/", validateToken, async (req, res) => {
+router.get("/", async (req, res) => {
+  //delete validateToken,
   try {
     const replies = await prisma.replies.findMany();
     res.json(replies);
@@ -29,8 +30,8 @@ router.get("/", validateToken, async (req, res) => {
 
 router.post("/", async (req, res) => {
   const message = req.body;
-  const username = req.user.username;
-  message.username = username;
+  // const username = req.user.username;
+  // message.username = username;
   await prisma.replies.create({ data: message });
   res.json(message);
 });
